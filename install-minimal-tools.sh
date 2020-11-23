@@ -47,9 +47,9 @@ sudo curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-
 sudo chmod +x /usr/local/bin/docker-compose
 
 # Octant
-wget https://github.com/vmware-tanzu/octant/releases/download/v0.14.1/octant_0.14.1_Linux-64bit.deb
-sudo apt install ./octant_0.14.1_Linux-64bit.deb
-rm octant_0.14.1_Linux-64bit.deb
+wget https://github.com/vmware-tanzu/octant/releases/download/v0.16.2/octant_0.16.2_Linux-64bit.deb
+sudo apt install ./octant_0.16.2_Linux-64bit.deb
+rm octant_0.16.2_Linux-64bit.deb
 
 # Create workspace
 mkdir ~/workspace
