@@ -64,11 +64,7 @@ alias k=kubectl
 complete -F __start_kubectl k
 
 # install zsh
-wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh
-chmod +x ./install.sh
-CHSH=yes RUNZSH=no ./install.sh
-rm ./install.sh
-
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" --unattended
 # Kubectl zsh alias
 source <(kubectl completion zsh)  # setup autocomplete in zsh into the current shell
 echo "source <(kubectl completion zsh)" >> ~/.zshrc # add autocomplete permanently to your zsh shell
@@ -76,4 +72,5 @@ echo "source <(kubectl completion zsh)" >> ~/.zshrc # add autocomplete permanent
 # Git alias
 git config --global alias.lola "log --graph --decorate --pretty=oneline --abbrev-commit --all"
 
+sudo microk8s stop
 reboot
