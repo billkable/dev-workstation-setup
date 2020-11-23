@@ -51,6 +51,11 @@ kubectl apply -f https://projectcontour.io/quickstart/contour.yaml
 sudo curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 
+# Octant
+wget https://github.com/vmware-tanzu/octant/releases/download/v0.16.2/octant_0.16.2_Linux-64bit.deb
+sudo apt install ./octant_0.16.2_Linux-64bit.deb
+rm octant_0.16.2_Linux-64bit.deb
+
 # Kubectl aliases
 source <(kubectl completion bash) # setup autocomplete in bash into the current shell, bash-completion package should be installed first.
 echo "source <(kubectl completion bash)" >> ~/.bashrc # add autocomplete permanently to your bash shell.
