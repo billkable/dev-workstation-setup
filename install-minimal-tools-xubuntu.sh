@@ -24,7 +24,7 @@ sudo apt upgrade -y
 
 sudo apt install openjdk-11-jdk-headless jq curl wget xclip -y
 sudo apt install gnome-session gnome-terminal gnome-tweaks -y
-sudo apt install ubuntu-desktop-minimal -y
+sudo apt install xubuntu-desktop -y
 sudo apt install docker-ce docker-ce-cli containerd.io -y
 sudo apt install zsh -y
 
@@ -59,15 +59,15 @@ rm octant_0.16.2_Linux-64bit.deb
 # Kubectl aliases
 source <(kubectl completion bash) # setup autocomplete in bash into the current shell, bash-completion package should be installed first.
 echo "source <(kubectl completion bash)" >> ~/.bashrc # add autocomplete permanently to your bash shell.
+echo "alias k=kubectl" >> ~/.bashrc
+echo "complete -F __start_kubectl k" >> ~/.bashrc
 
-alias k=kubectl
-complete -F __start_kubectl k
-
-# install zsh
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" --unattended
 # Kubectl zsh alias
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 source <(kubectl completion zsh)  # setup autocomplete in zsh into the current shell
 echo "source <(kubectl completion zsh)" >> ~/.zshrc # add autocomplete permanently to your zsh shell
+echo "alias k=kubectl" >> ~/.zshrc
+echo "complete -F __start_kubectl k" >> ~/.zshrc
 
 # Git alias
 git config --global alias.lola "log --graph --decorate --pretty=oneline --abbrev-commit --all"
