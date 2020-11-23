@@ -46,3 +46,29 @@ sudo microk8s config > ~/.kube/config
 sudo usermod -aG microk8s ubuntu
 sudo chown -fR ubuntu ~/.kube
 kubectl apply -f https://projectcontour.io/quickstart/contour.yaml
+
+# Docker Compose
+sudo curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+
+# Kubectl aliases
+source <(kubectl completion bash) # setup autocomplete in bash into the current shell, bash-completion package should be installed first.
+echo "source <(kubectl completion bash)" >> ~/.bashrc # add autocomplete permanently to your bash shell.
+
+alias k=kubectl
+complete -F __start_kubectl k
+
+# install zsh
+wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+chmod +x ./install.sh
+CHSH=yes RUNZSH=no ./install.sh
+rm ./install.sh
+
+# Kubectl zsh alias
+source <(kubectl completion zsh)  # setup autocomplete in zsh into the current shell
+echo "source <(kubectl completion zsh)" >> ~/.zshrc # add autocomplete permanently to your zsh shell
+
+# Git alias
+git config --global alias.lola "log --graph --decorate --pretty=oneline --abbrev-commit --all"
+
+reboot
