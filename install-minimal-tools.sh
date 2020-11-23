@@ -45,4 +45,3 @@ sudo microk8s enable rbac dns storage
 sudo microk8s config > ~/.kube/config
 sudo usermod -aG microk8s ubuntu
 sudo chown -fR ubuntu ~/.kube
-kubectl apply -f https://projectcontour.io/quickstart/contour.yaml
