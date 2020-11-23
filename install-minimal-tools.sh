@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# Create workspace
+mkdir -p ~/workspace
+cd ~/workspace
+
+# Prep repos
 sudo apt install \
     apt-transport-https \
     ca-certificates \
@@ -50,10 +55,6 @@ sudo chmod +x /usr/local/bin/docker-compose
 wget https://github.com/vmware-tanzu/octant/releases/download/v0.16.2/octant_0.16.2_Linux-64bit.deb
 sudo apt install ./octant_0.16.2_Linux-64bit.deb
 rm octant_0.16.2_Linux-64bit.deb
-
-# Create workspace
-mkdir ~/workspace
-cd ~/workspace
 
 # Kubectl aliases
 source <(kubectl completion bash) # setup autocomplete in bash into the current shell, bash-completion package should be installed first.
